@@ -1,0 +1,37 @@
+.logo{
+  margin-top: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1302px;
+  height: 290px;
+}
+
+.fields {
+  padding-top: 70px;
+}
+
+.fields input{
+  padding: 30px;
+  width: 500px;
+  font-size: 18pt;
+}
+
+.fields textarea {
+  padding: 30px;
+  width: 500px;
+  font-size: 16pt;	
+}
+
+#login_page{
+  background-color: white;
+  position: relative;
+  left: 0;
+  right: 0;
+  height: 900px;
+  text-align: center;
+}
+
+#login_btn{
+	margin-top: 40px;
+}
