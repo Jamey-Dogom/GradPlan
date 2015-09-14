@@ -1,3 +1,4 @@
+/*
 window.addEventListener("load", init, false);
 
 var checkbox_container;
@@ -12,14 +13,42 @@ var values_array = [];
 var keys_array = [];
 var body, tbl, tbdy;
 
+
+
+var menu;
+
+var majors = {
+	"computerScience": "Computer Science",
+	"marketing" : "Marketing"
+};
+
+
 function init(){
-	dropdown = document.getElementById("dropdown");
-	dropdown.addEventListener("change",changeHandler);
-	checkbox_container = document.getElementById('checkbox');
-	$("#submit").hide();
-	document.getElementById("submit").addEventListener("click", submitClicked, false);
+	//dropdown = document.getElementById("dropdown");
+	//dropdown.addEventListener("change",changeHandler);
+	//checkbox_container = document.getElementById('checkbox');
+	//$("#submit").hide();
+	//document.getElementById("submit").addEventListener("click", submitClicked, false);
+
+	menu = "<ul>";
+	for (var k in majors) {
+	   menu += '<li class=\'active has-sub\'><a id='+k+'><span>' + majors[k] + '</span></a></li>';
+	}
+
+	$("#cssmenu").append(menu);
+
+	document.getElementById("computerScience").addEventListener("click",clicked);
 }
 
+function submitClicked(){
+}
+
+function clicked(){
+	var r = callPHP("create", this.id, "First");
+}
+
+
+/*
 function submitClicked(){
 	$("#submit").hide();
 	for (var p in major_obj) {
@@ -117,11 +146,24 @@ function callPHP(action, major, checked){
 		},
 		success: function(response){
 			var data = $.parseJSON(response);
+			console.log(data.values);
+			menu += "<ul>";
+			for(var i=0; i<data.values.length;i++){
+				menu += '<li class=\'has-sub\'><a href=\'#\'><span>'+data.values[i]+'</span></a>';	
+			}
+			menu += "</ul>";
+			menu += "</ul>";
+
+
+			$("#cssmenu").append(menu);
+
 			major_obj = data.total;
+			/*
 			if(create)
 				createElements(data);
 			else
 				deleteElements(data);
+			
 		},
 		error: function(jqXHR, textStatus, errorThrown) {
 	        console.log(textStatus, errorThrown);
@@ -129,6 +171,7 @@ function callPHP(action, major, checked){
 	});	
 }
 
+/*
 function createElements(data){
 	for(var i=0; i<data.values.length;  i++){
 		var checkbox = document.createElement("input");
@@ -172,5 +215,5 @@ function deleteElements(data){
 	}
 	create = true;
 }
-
+*/
 

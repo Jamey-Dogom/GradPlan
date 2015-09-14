@@ -3,4 +3,4 @@ Web Application that allows users/students to access CSUN schedule data and crea
 
 
 
-url: http://topmarkproductions.com/dev/GradPlan/
+url: http://www.csun.edu/~ahm4568/GradPlan/

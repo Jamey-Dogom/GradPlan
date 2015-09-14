@@ -23,6 +23,27 @@
   font-size: 16pt;	
 }
 
+#arrows{
+  position: absolute;
+  display: block;
+  bottom: 200px;
+  right:25%;
+  left:50%;
+  margin-left:-150px;
+}
+
+#left{
+  width: 50px;
+  height: 50px;  
+}
+
+#right{
+  width: 50px;
+  height: 50px;
+  margin-left: 20px;
+}
+
+
 #login_page{
   background-color: white;
   position: relative;
@@ -35,3 +56,14 @@
 #login_btn{
 	margin-top: 40px;
 }
+
+#main_page{
+  margin-top: 10px;
+}
+
+
+.major{
+    position:relative;
+}
+
+

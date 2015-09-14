@@ -61,4 +61,22 @@
 	$return_array['total'] = $major;
 	echo json_encode($return_array);
 
+	/*
+	$checked_item = $_POST['checked_item'];
+	$return_array = array();
+	$value_array = array();
+	reset($return_array);
+	reset($value_array);
+			foreach($computerScience as $key => $value){
+				$keysub = substr($key, 0,8);
+				if($checked_item == $keysub){
+					$value_array[$count] = $value;
+					$count += 1;
+				}
+			}
+
+				$return_array['values'] = $value_array;
+	$return_array['total'] = $major;
+	echo json_encode($return_array);
+	*/
 ?>
