@@ -25,7 +25,33 @@ var computerScience = {
 var marketing = {
 	"Econ_160" : [""],
 	"Econ_161" : ["Econ_160"],
+	"Comp_100" : [""],
 };
+
+var psychology = {
+	"Psyc_150" : [""],
+};
+
+var accounting = {
+	"Acct_220" : [""],
+};
+
+var mechanical_engineering = {
+	"Math_102" : [""]
+};
+
+var physics = {
+	"Phys_220" : [""],
+};
+
+var biology = {
+	"Biol_107" : [""],
+};
+
+var chemistry = {
+	"Chem_100" : [""],
+};
+
 
 var majors  = ["Computer Science", "Marketing", "Psychology", "Accounting", "Mechanical Engineering", "Physics",
 "Biology","Chemistry", "Anthropology","Art","Biochemistry","History","Journalism","Nursing","Deaf Studies"];

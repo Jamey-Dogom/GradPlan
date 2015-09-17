@@ -1,12 +1,14 @@
 <html>
 	<head>
 		<title>GradPlan</title>
-		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>	
+		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/list.js"></script>
 		<script type="text/javascript" src="js/login.js"></script>
 		<script type="text/javascript" src="js/graph.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/class.css">
+		<link rel="stylesheet" type="text/css" href="css/bar.css">
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 		<img src="Images/grad-check.jpg" id="logo" class="logo">
@@ -16,7 +18,18 @@
             </div>		
             <a id="login"><img id="login_btn" src="Images/button-grad-check.png"></a>
 		</div>
+
+		<div id="bar" class="checkout-wrap">
+		  <ul class="checkout-bar">
+		    <li class="visited first">Login</li>
+		    <li id="second">Select Major</li>
+		    <li id="third">Select Classes</li>
+		    <li id="fourth">Review</li>
+		    <li id="fifth">Complete</li>
+		  </ul>
+		</div>
 		<div id="main_page">
+
 			<div class="ui"></div>
 			<div id="arrows">
 				<a><img src="Images/left_arrow.png" id="left"></a>
@@ -24,6 +37,16 @@
 			</div>
 	  	</div>
 	  	<div id="graph_page">
+	  		<table class="class-table">
+	  			<tr>
+	  				<th>Semester 1</th>
+	  				<th>Semester 2</th>
+	  				<th>Semester 3</th>
+	  				<th>Semester 4</th>
+	  			</tr>
+	  			<tr id="row_1"></tr>
+	  			<tr id="row_2"></tr>
+			</table>
 	  	</div>
 	</body>
 </html>
