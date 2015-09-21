@@ -1,71 +1,26 @@
-.logo{
-  margin-top: 30px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 1302px;
-  height: 290px;
+/* GRAP PAGE -------------------------------------------------*/
+#sortable1, #sortable2 {
+  cursor: pointer;
+  width: 142px;
+  min-height: 20px;
+  list-style-type: none;
+  margin: 0;
+  padding: 5px 0 0 0;
+  float: left;
+  margin-right: 10px;
 }
 
-.fields {
-  padding-top: 70px;
-}
-
-.fields input{
-  padding: 30px;
-  width: 500px;
-  font-size: 18pt;
-}
-
-.fields textarea {
-  padding: 30px;
-  width: 500px;
-  font-size: 16pt;	
-}
-
-#arrows{
-  position: absolute;
-  display: block;
-  bottom: 200px;
-  right:25%;
-  left:50%;
-  margin-left:-150px;
-}
-
-#left{
-  width: 50px;
-  height: 50px;  
-}
-
-#right{
-  width: 50px;
-  height: 50px;
-  margin-left: 20px;
-}
-
-
-#login_page{
-  background-color: white;
-  position: relative;
-  left: 0;
-  right: 0;
-  height: 900px;
+#sortable1 li, #sortable2 li {
+  margin: 0 5px 5px 5px;
+  padding: 5px;
+  font-size: 1.2em;
+  width: 120px;
   text-align: center;
 }
 
-#login_btn{
-	margin-top: 40px;
+#sortable1 li, #sortable1{
+  background-color: lightblue;
 }
-
-#main_page{
-  margin-top: 10px;
-}
-
-
-.major{
-    position:relative;
-}
-
 
 .class-table {
   margin-top: 100px;
@@ -90,7 +45,128 @@ td {
   padding: 20px 30px;
 }
 
+/* ------------------------------------------------------------*/
 
+
+
+/* LOGIN PAGE ------------------------------------------------ */
+.logo{
+  margin-top: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 976px;
+  height: 217px;
+}
+
+.fields {
+  padding-top: 70px;
+}
+
+.fields input{
+  padding: 30px;
+  width: 500px;
+  font-size: 18pt;
+}
+
+.fields textarea {
+  padding: 30px;
+  width: 500px;
+  font-size: 16pt;	
+}
+
+#login_page{
+  background-color: white;
+  position: relative;
+  left: 0;
+  right: 0;
+  height: 900px;
+  text-align: center;
+}
+
+#login_btn{
+  margin-top: 40px;
+}
+/* ------------------------------------------------------------*/
+
+/* MAIN PAGE ------------------------------------------------ */
+#arrows{
+  position: absolute;
+  display: block;
+  bottom: 200px;
+  right:25%;
+  left:50%;
+  margin-left:-150px;
+}
+
+#left{
+  width: 50px;
+  height: 50px;  
+}
+
+#right{
+  width: 50px;
+  height: 50px;
+  margin-left: 20px;
+}
+
+#main_page{
+  margin-top: 10px;
+}
+/* ------------------------------------------------------------*/
+
+.myButton {
+  -moz-box-shadow: 0px 1px 0px 0px #f0f7fa;
+  -webkit-box-shadow: 0px 1px 0px 0px #f0f7fa;
+  box-shadow: 0px 1px 0px 0px #f0f7fa;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #33bdef), color-stop(1, #019ad2));
+  background:-moz-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+  background:-webkit-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+  background:-o-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+  background:-ms-linear-gradient(top, #33bdef 5%, #019ad2 100%);
+  background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bdef', endColorstr='#019ad2',GradientType=0);
+  background-color:#33bdef;
+  -moz-border-radius:42px;
+  -webkit-border-radius:42px;
+  border-radius:42px;
+  border:1px solid #057fd0;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:21px;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:0px -1px 0px #5b6178;
+}
+.myButton:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #019ad2), color-stop(1, #33bdef));
+  background:-moz-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+  background:-webkit-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+  background:-o-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+  background:-ms-linear-gradient(top, #019ad2 5%, #33bdef 100%);
+  background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#019ad2', endColorstr='#33bdef',GradientType=0);
+  background-color:#019ad2;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
+}
+
+
+#message{
+  position: relative;
+  left: 0;
+  right: 0;
+  margin-top: 20px;
+  height: 900px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #000000;
+  font-family: 'Noto Sans', sans-serif;
+}
   
-
-
