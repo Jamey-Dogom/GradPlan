@@ -5,23 +5,38 @@
 
 		<script src="//mrrio.github.io/jsPDF/dist/jspdf.debug.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script> -->
 		<script type="text/javascript" src="js/list.js"></script>
 		<script type="text/javascript" src="js/login.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css" media="print">
 		<link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="css/class.css">
 		<link rel="stylesheet" type="text/css" href="css/bar.css">
 		<link rel="stylesheet" type="text/css" href="css/table.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
 		<link rel="icon" type="image/png" href="http://www.7speedreading.com/wp-content/themes/alfie/img/school-icon.png" sizes="16x16">
 	</head>
 	<body>
+		<nav>
+    <div class="nav-wrapper">
+	      <a href="./" class="brand-logo"><img src="images/logo.png"></a>
+	      <ul id="nav-mobile" class="right hide-on-med-and-down">
+	        <li><a href="#">Help</a></li>
+	        <li><a id="logout" href="#">Logout</a></li>
+	      </ul>
+	    </div>
+	  </nav>
 		<img src="Images/grad-check.jpg" id="logo" class="logo">
 		<div id="login_page">
-            <div class="fields">
-                <input type="text"  placeholder="CSUN ID" name="id" id="identifier">               
-            </div>		
-            <a id="login"><img id="login_btn" src="Images/button-grad-check.png"></a>
+	    <div class="fields">
+	        <input type="text"  placeholder="CSUN ID" name="id" id="identifier">
+	    </div>
+			<button class="waves-effect waves-light btn-large" type="submit" id="login">LOG IN
+		    <i class="material-icons right">send</i>
+		  </button>
+	    <!-- <a id="login"><img id="login_btn" src="Images/button-grad-check.png"></a> -->
 		</div>
 
 		<div id="bar" class="checkout-wrap">
@@ -47,11 +62,11 @@
 			</div>
 		</div>
 		<div id="submit_page">
-            <div id="message">
-                <div>Thank You for visiting GradPlan</div>
-                <div>Your document has been downloaded</div>
-                <div id="countdown">10</div>
-            </div>
+	    <div id="message">
+	        <div>Thank You for visiting GradPlan</div>
+	        <div>Your document has been downloaded</div>
+	        <div id="countdown">10</div>
+	    </div>
 		</div>
 	</body>
 </html>

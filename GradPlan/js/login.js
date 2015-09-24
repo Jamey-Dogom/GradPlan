@@ -10,6 +10,7 @@ var id = '';				// STUDENT ID
 
 function init(){
 	$("#login_page").show();
+	$("#logout").hide();
 	$("#bar").hide();
 	$("#main_page").hide();
 	$("#graph_page").hide();
@@ -19,8 +20,9 @@ function init(){
 		id = document.getElementById('identifier').innerHTML;
 		$("#login_page").hide();
 		$("#main_page").show();
+		$("#logout").show();
 		$("#bar").fadeIn(2000);
- 
+
  		$("#second").addClass("active");
  		$("#third").addClass("next");
 
@@ -47,7 +49,7 @@ function listMajors(){
 		c += '<div class=\'ui_box__top highlight\'>';
 		c += '<h3>'+x+'</h3>';
 		c += '</div>';
-		c += '</div>';	
+		c += '</div>';
 	}
 	$(".ui").append(c);
 
@@ -101,7 +103,7 @@ function create(array){
 		c += '<div class=\'ui_box__top\' id='+k+'>';
 		c += '<h3>'+k.substring(0,4) + " " + k.substring(5,9)+'</h3>';
 		c += '</div>';
-		c += '</div>';	
+		c += '</div>';
 	}
 	$(".ui").append(c);
 	$(".ui_box__top").on("click",function(){
@@ -112,7 +114,7 @@ function create(array){
 			var id = this.id;
 			taken_array[j] = id;
 			j++;
-			addItem(id,"#007A3D");	
+			addItem(id,"#007A3D");
 		}
 		else if(color == "#007a3d"){
 			$(this).css("background-color","#107FC9" );
@@ -156,7 +158,7 @@ $(document).ready(function(){
 		$("#fourth").addClass("active");
 		$("#fifth").addClass("next");
 		tableCreate();
-	});	
+	});
 
 	// GENERATE PDF
 	$("#complete").click(function(){
@@ -189,7 +191,7 @@ $(document).ready(function(){
 				clearInterval(interval);
 				location.reload();
 			}
-		},1000);	
+		},1000);
   	});
 });
 
@@ -201,11 +203,11 @@ function addItem(id,color){
 				$("#"+major[k][i]).css("background-color",color);
 				if(checkArray(major[k][i])){
 					taken_array[j] = major[k][i];
-					j++; 
+					j++;
 				}
 				addItem(major[k][i], color);
 			}
-		}		
+		}
 	}
 }
 
@@ -245,7 +247,7 @@ function clearArray(){
 
 // CREATE TABLE
 function tableCreate(){
-	var not_taken = total_array.filter(function(obj) { return taken_array.indexOf(obj) == -1; });	
+	var not_taken = total_array.filter(function(obj) { return taken_array.indexOf(obj) == -1; });
 	var ready = getCurrent(not_taken);
 	data = "";
 	for(var i=0; i<ready.length; i++){
@@ -261,13 +263,13 @@ function tableCreate(){
 		data += '<li>9:30-10:45</li>';
 		data += '<li>Scott Fitzgerald</li>';
 		data += "<li>19203</li>";
-		data += '<li><a href='+url+' target="_blank" class="link_now">View Class</a></li>';  
+		data += '<li><a href='+url+' target="_blank" class="link_now">View Class</a></li>';
 		data += "</ul>";
 	}
 	$(".ready").append(data);
 }
 
-// RETURN CURRENT LIST OF CLASSES THAT STUDENT CAN TAKE 
+// RETURN CURRENT LIST OF CLASSES THAT STUDENT CAN TAKE
 function getCurrent(not_taken){
 	var ready_array = [];
 	ready_array.length = 0;
@@ -293,4 +295,3 @@ function checkTaken(item){
 	}
 	return false;
 }
-
