@@ -248,21 +248,23 @@ function tableCreate(){
 	var not_taken = total_array.filter(function(obj) { return taken_array.indexOf(obj) == -1; });	
 	var ready = getCurrent(not_taken);
 	data = "";
-
 	for(var i=0; i<ready.length; i++){
-		taken_array[j] = ready[i];
-		j++;
-		var s = ready[i].split("_").join(" ");
-		data += '<td>'+s+'</td>';
+		var url = "www.csun.edu";
+		for(var k in computerScience_links){
+			if(ready[i] == k){
+				url = computerScience_links[k];
+			}
+		}
+		data += "<ul>";
+		data += "<li>"+ready[i].split("_").join(" ");+"</li>";
+		data += '<li>Mon, Wed</li>';
+		data += '<li>9:30-10:45</li>';
+		data += '<li>Scott Fitzgerald</li>';
+		data += "<li>19203</li>";
+		data += '<li><a href='+url+' target="_blank" class="link_now">View Class</a></li>';  
+		data += "</ul>";
 	}
-
-	if(ready.length == 3){
-		data += '<td>GE</td>';
-	}
-	$("#row"+n).append(data);
-	n++;
-	if(n < 5)
-		tableCreate();
+	$(".ready").append(data);
 }
 
 // RETURN CURRENT LIST OF CLASSES THAT STUDENT CAN TAKE 

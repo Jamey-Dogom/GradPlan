@@ -1,6 +1,8 @@
 <html>
 	<head>
 		<title>GradPlan</title>
+
+
 		<script src="//mrrio.github.io/jsPDF/dist/jspdf.debug.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 		<script type="text/javascript" src="js/list.js"></script>
@@ -9,6 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="css/class.css">
 		<link rel="stylesheet" type="text/css" href="css/bar.css">
+		<link rel="stylesheet" type="text/css" href="css/table.css">
 		<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
 		<link rel="icon" type="image/png" href="http://www.7speedreading.com/wp-content/themes/alfie/img/school-icon.png" sizes="16x16">
 	</head>
@@ -23,9 +26,9 @@
 
 		<div id="bar" class="checkout-wrap">
 		  <ul class="checkout-bar">
-		    <li class="visited first">Login</li>
-		    <li id="second">Select Major</li>
-		    <li id="third">Select Classes</li>
+		    <li class="previous visited">Login</li>
+		    <li id="second">Major</li>
+		    <li id="third">Fall 2015 Classes</li>
 		    <li id="fourth">Review</li>
 		    <li id="fifth">Complete</li>
 		  </ul>
@@ -38,20 +41,7 @@
 			</div>
 	  	</div>
 	  	<div id="graph_page">
-	  		<table class="class-table">
-	  			<tr id="row1">
-	  				<th>Semester 1</th>
-	  			</tr>
-	  			<tr id="row2">
-	  				<th>Semester 2</th>
-	  			</tr>
-	  			<tr id="row3">
-	  				<th>Semester 3</th>
-	  			</tr>
-	  			<tr id="row4">
-	  				<th>Semester 4</th>
-	  			</tr>			  			
-			</table>
+	  		<div class="ready"></div>
 			<div id="arrows">
 				<a id="complete" class="myButton">Generate PDF</a>
 			</div>
