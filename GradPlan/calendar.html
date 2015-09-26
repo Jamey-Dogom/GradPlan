@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/smoothness/jquery-ui.css' />
+<link rel='stylesheet' type='text/css' href='css/jquery.weekcalendar.css' />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js'></script>
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js'></script>
+<script type='text/javascript' src='js/jquery.weekcalendar.js'></script>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="icon" type="image/png" href="http://www.7speedreading.com/wp-content/themes/alfie/img/school-icon.png" sizes="16x16">
+<script type='text/javascript'>
+	var year = new Date().getFullYear();
+	var month = new Date().getMonth();
+	var day = new Date().getDate();
+
+	var week = new Date().getDay();
+
+	var eventData = {
+		events : [
+		   {"id":1, "start": new Date(year, month, day - 3, 14), "end": new Date(year, month, day -3, 14, 50),"title":"Comp 380"},
+		   {"id":11, "start": new Date(year, month, day - 1, 14), "end": new Date(year, month, day -1, 14, 50),"title":"Comp 380"},
+
+		   {"id":2, "start": new Date(year, month, day, 11), "end": new Date(year, month, day, 12, 15),"title":"Comp 222"},
+		   {"id":12, "start": new Date(year, month, day - 2, 11), "end": new Date(year, month, day -2, 12, 15),"title":"Comp 222"},
+
+		   {"id":3, "start": new Date(year, month, day - 3, 12), "end": new Date(year, month, day -3, 13,55),"title":"Math 150B"},
+		   {"id":13, "start": new Date(year, month, day - 1, 12), "end": new Date(year, month, day -1, 13, 55),"title":"Math 150B"},
+
+		   {"id":4, "start": new Date(year, month, day, 14), "end": new Date(year, month, day, 15,15),"title":"Comp 256"},
+		   {"id":9, "start": new Date(year, month, day - 2, 14), "end": new Date(year, month, day - 2, 15,15),"title":"Comp 256"},
+		   
+		   {"id":5, "start": new Date(year, month, day, 8), "end": new Date(year, month, day, 9,15),"title":"Comp 333"},
+		   {"id":10, "start": new Date(year, month, day - 2, 8), "end": new Date(year, month, day -2, 9,15),"title":"Comp 333"},
+		   
+		   // FRIDAY
+		   {"id":6, "start": new Date(year, month, day + 1, 15), "end": new Date(year, month, day +1, 20),"title":"Work"},
+		   // WEDNESDAY
+		   {"id":7, "start": new Date(year, month, day - 1, 15), "end": new Date(year, month, day -1, 20),"title":"Work"},
+		   // MONDAY
+		   {"id":8, "start": new Date(year, month, day - 3, 15), "end": new Date(year, month, day -3, 20),"title":"Work"}
+
+		]
+	};
+
+
+	   
+	$(document).ready(function() {
+		$('#calendar').weekCalendar({
+			timeslotsPerHour: 4,
+			height: function($calendar){
+				return $(window).height() - $("h1").outerHeight();
+			},
+			eventRender : function(calEvent, $event) {
+				if(calEvent.end.getTime() < new Date().getTime()) {
+					$event.css("backgroundColor", "#aaa");
+					$event.find(".time").css({"backgroundColor": "#999", "border":"1px solid #888"});
+				}
+			},
+			data:eventData
+		});		
+	});
+
+</script>
+</head>
+<body>
+		<nav id="main_nav">
+   		 <div class="nav-wrapper">
+	      <a href="./" class="brand-logo"><img src="Images/logo.png"></a>
+	      <img id="gradplan" src="Images/gradplan.png">
+	      <ul id="nav-mobile" class="right hide-on-med-and-down">
+	        <li><a id="logout" href="index.html">Quit</a></li>
+	      </ul>
+	    </div>
+	  </nav>
+	<div id='calendar'></div>
+</body>
+</html>

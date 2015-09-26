@@ -21,6 +21,30 @@ var computerScience = {
 	"Comp_490" : ["Comp_380"]
 };
 
+
+var computerScience_classes = {
+	"Comp_108" : ["TuTh","Wen Chin Hsu", "JD1600","11:00-12:15"],
+	"Comp_110" : ["TuTh", "Son Pham", "JD1104","8:00-9:15"],
+	"Comp_122" : ["TuTh", "Jeffrey Wiegley", "JD2214", "10:30-10:55"],
+	"Comp_182" : ["MoWe", "John Noga", "JD2215", "9:30-10:45"],
+	"Comp_222" : ["TuTh", "Robert McIlhenny", "JD3510", "11:00-12:15"],
+	"Comp_256" : ["TuTh", "Richard Lorentz", "JD3508", "2:00-3:15"],
+	"Comp_282" : ["MoWe", "Staff", "JD3508", "8:00-9:15"],
+	"Comp_310" : ["MoWe", "Steven Fitzgerald", "JD3508", "9:30-10:45"],
+	"Comp_322" : ["MoWe", "Li Liu", "JD3520", "11:00-12:15"],
+	"Comp_333" : ["TuTh", "Diane Schwartz", "JD3508", "8:00-9:15"],
+	"Comp_380" : ["MoWe", "Staff", "JD3520", "2:00-2:50"],
+	"Math_102" : ["MoWe","Staff","CR5123","8:00-9:15"],
+	"Math_104" : ["MoWe","Staff","LO1219", "8:00-9:15"],
+	"Math_150A" : ["MoWe","Staff","CR5123","2:00-3:25"],
+	"Math_150B" : ["MoWe","Staff","CR5114","12:30-1:55"],
+	"Math_262" : ["TuTh","Staff","CR5119","9:30-10:45"],
+	"Math_341" : ["MoWe","Staff","CR5118","9:30-10:45"],
+	"Math_482" : ["TuTh","Staff","CR5119","12:30-1:45"],
+	"Phil_230" : ["MoWe","Staff","JR244","12:30-1:45"],
+	"Comp_490" : ["TuTh","Steven Fitzgerald","JD2211","11:00-12:15"]
+}
+
 var computerScience_links = {
 	"Comp_122" : "http://www.csun.edu/catalog/academics/comp/courses/comp-122l/",
 	"Comp_108" : "http://www.csun.edu/catalog/academics/comp/courses/comp-108/",

@@ -1,11 +1,8 @@
 <html>
 	<head>
 		<title>GradPlan</title>
-
-
 		<script src="//mrrio.github.io/jsPDF/dist/jspdf.debug.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script> -->
 		<script type="text/javascript" src="js/list.js"></script>
 		<script type="text/javascript" src="js/login.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
@@ -17,56 +14,91 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
 		<link rel="icon" type="image/png" href="http://www.7speedreading.com/wp-content/themes/alfie/img/school-icon.png" sizes="16x16">
+
+		<script src="js/time_js/jquery.1.9.1.js"></script>
+	    <script src="js/time_js/picker.js"></script>
+	    <script src="js/time_js/picker.time.js"></script>
+	    <script src="js/time_js/legacy.js"></script>
+	    <link rel="stylesheet" href="css/time_css/classic.css">
+		<link rel="stylesheet" href="css/time_css//classic.time.css">
 	</head>
 	<body>
-		<nav>
-    <div class="nav-wrapper">
-	      <a href="./" class="brand-logo"><img src="images/logo.png"></a>
+		<nav id="main_nav">
+   		 <div class="nav-wrapper">
+	      <a href="./" class="brand-logo"><img src="Images/logo.png"></a>
+	      <img id="gradplan" src="Images/gradplan.png">
 	      <ul id="nav-mobile" class="right hide-on-med-and-down">
-	        <li><a href="#">Help</a></li>
-	        <li><a id="logout" href="#">Logout</a></li>
+	      	<li id="previous"><a>Previous</a></li>
+	      	<li id="next"><a>Next</a></li>
+	        <li><a id="help">Help</a></li>
+	        <li><a id="logout" href="index.html">Quit</a></li>
 	      </ul>
 	    </div>
 	  </nav>
 		<img src="Images/grad-check.jpg" id="logo" class="logo">
 		<div id="login_page">
-	    <div class="fields">
-	        <input type="text"  placeholder="CSUN ID" name="id" id="identifier">
-	    </div>
-			<button class="waves-effect waves-light btn-large" type="submit" id="login">LOG IN
+			<button class="waves-effect waves-light btn-large" type="submit" id="login">START
 		    <i class="material-icons right">send</i>
 		  </button>
-	    <!-- <a id="login"><img id="login_btn" src="Images/button-grad-check.png"></a> -->
 		</div>
 
 		<div id="bar" class="checkout-wrap">
 		  <ul class="checkout-bar">
-		    <li class="previous visited">Login</li>
-		    <li id="second">Major</li>
-		    <li id="third">Fall 2015 Classes</li>
-		    <li id="fourth">Review</li>
+		    <li class="previous visited">Start</li>
+		    <li id="second">SelectMajor</li>
+		    <li id="third">Current Classes</li>
+		    <li id="fourth">Work Schedule</li>
 		    <li id="fifth">Complete</li>
 		  </ul>
 		</div>
 		<div id="main_page">
 			<div class="ui"></div>
-			<div id="arrows">
-				<a><img src="Images/left_arrow.png" id="left"></a>
-				<a><img src="Images/right_arrow.png" id="right"></a>
-			</div>
 	  	</div>
-	  	<div id="graph_page">
-	  		<div class="ready"></div>
-			<div id="arrows">
-				<a id="complete" class="myButton">Generate PDF</a>
-			</div>
-		</div>
+	  	<div id="work_page">
+	  		<table class="work-table">
+			  <tbody>
+	            <tr>
+		            <th></th>
+		            <th scope="col">Monday</th>
+		            <th scope="col">Tuesday</th>
+		            <th scope="col">Wednesday</th>
+		          	<th scope="col">Thursday</th>
+		            <th scope="col">Friday</th>
+	        	</tr>
+		        <tr>
+		            <th scope="row">Start</th>
+		            <td><input id="input_from"class="datepicker"type="time"name="time"autofocuss></td>
+		            <td><input id="input_from"class="datepicker"type="time"name="time"autofocuss></td>
+		            <td><input id="input_from"class="datepicker"type="time"name="time"autofocuss></td>
+		            <td><input id="input_from"class="datepicker"type="time"name="time"autofocuss></td>
+		            <td><input id="input_from"class="datepicker"type="time"name="time"autofocuss></td>
+		        </tr>
+		        <tr>
+		            <th scope="row">End</th>
+		            <td><input id="input_from"class="datepicker"type="time"name="time"autofocuss></td>
+		            <td><input id="input_from"class="datepicker"type="time"name="time"autofocuss></td>
+		            <td><input id="input_from"class="datepicker"type="time"name="time"autofocuss></td>
+		            <td><input id="input_from"class="datepicker"type="time"name="time"autofocuss></td>
+		            <td><input id="input_from"class="datepicker"type="time"name="time"autofocuss></td>
+		        </tr>
+			  </tbody>
+			</table>
+	  	</div>
 		<div id="submit_page">
-	    <div id="message">
-	        <div>Thank You for visiting GradPlan</div>
-	        <div>Your document has been downloaded</div>
-	        <div id="countdown">10</div>
-	    </div>
+			<div id="radio" class="container">
+			  <div class="btn-group">
+			    <button type="button" id="calendar" value="calendar" class="btn btn-primary">Calendar View</button>
+			    <button type="button" id="complete" class="btn btn-primary">Generate PDF</button>
+			  </div>
+			</div>		  		
+	  		<div class="ready"></div>
+		</div>
+		<div id="helper">
+			<div id="help_text"></div>
+			<a id="close"><img id="close_button" src="Images/close.png"></a>
 		</div>
 	</body>
 </html>
+
+<!-- WORK - 3:00PM - 8:00PM  mon wed fri-->
+<!-- Comp 122, Comp 282, Math 150A, Phil 230 -->

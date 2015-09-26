@@ -6,18 +6,24 @@ var total_array = [];		// COMPLETE LIST OF CLASSES FOR SELECTED MAJOR
 var l = 0;
 var n = 0;
 var major = '';				// SELECTED MAJOR
-var id = '';				// STUDENT ID
+var next_first = 0;
+var previous_first = 0;
 
 function init(){
+	document.getElementById("next").addEventListener("click",next,false);
+	document.getElementById("previous").addEventListener("click",previous,false);
 	$("#login_page").show();
 	$("#logout").hide();
 	$("#bar").hide();
+	$("#work_page").hide();
 	$("#main_page").hide();
-	$("#graph_page").hide();
 	$("#submit_page").hide();
+	$("#main_nav").hide();
+	$("#next").hide();
+	$("#previous").hide();
+	$("#helper").hide();
 
 	$("#login").on("click",function(){
-		id = document.getElementById('identifier').innerHTML;
 		$("#login_page").hide();
 		$("#main_page").show();
 		$("#logout").show();
@@ -27,13 +33,14 @@ function init(){
  		$("#third").addClass("next");
 
 		$( "#logo" ).animate({
-			width: "651px",
-		  	height: "145px",
+			width: "0px",
+		  	height: "0px",
 		  	marginLeft: "0in",
 		  	marginTop: "0in",
 		  }, 500, function() {
 		});
 
+ 		$("#main_nav").show();
 		listMajors();
 	});
 }
@@ -61,7 +68,8 @@ function listMajors(){
 		$("#third").addClass("active");
 		$("#fourth").addClass("next");
 		$(".ui").empty();
-		$("#arrows").show();
+		$("#next").show();
+		$("#previous").show();
 		switch(this.id){
 			case "Computer":
 				major = computerScience;
@@ -137,33 +145,25 @@ function rgb2hex(rgb) {
 }
 
 $(document).ready(function(){
-	// LEFT ARROW EVENT LISTENER
-	$("#left").click(function(){
-		clearArray();
-		listMajors();
-		$("#second").removeClass("previous visited");
-		$("#second").addClass("active");
-		$("#third").removeClass("active");
-		$("#third").addClass("next");
-		$("#fourth").removeClass("next");
+	$("#help").click(function(){
+		$("#helper").fadeIn();
+		var title = ("HELP").fontsize(7);
+		var page2 = ("Page 2 : Select your current major").fontsize(5);
+		var page3 = ("Page 3 : Select which classes you are taking in your current semester").fontsize(5);
+		var page4 = ("Page 4 : Select the times during the week that you work").fontsize(5);
+		var page5 = ("Page 5 : View the classes you can take in standard view, pdf form, or calendar view").fontsize(5);
+		document.getElementById("help_text").innerHTML = title + "<br/>" + page2 +'<br/>' + page3 + "<br/>" + page4 + "<br/>" + page5;
 
-	});
+		$("#close").click(function(){
+			$("#helper").fadeOut();
+		});
 
-	// RIGHT ARRAY EVENT LISTENER
-	$("#right").click(function(){
-		$("#main_page").hide();
-		$("#graph_page").show();
-		$("#third").removeClass("active");
-		$("#third").addClass("previous visited");
-		$("#fourth").addClass("active");
-		$("#fifth").addClass("next");
-		tableCreate();
 	});
 
 	// GENERATE PDF
 	$("#complete").click(function(){
 		var doc = new jsPDF();
-		var source = $('#graph_page').html();
+		var source = $('#submit_page').html();
 		var specialElementHandlers = {
 	            '#bypassme': function (element, renderer) {
 	                return true;
@@ -176,24 +176,60 @@ $(document).ready(function(){
 		doc.save('GradPlan.pdf');
 
   	});
+});
 
-  	$("#complete").click(function(){
-  		$("#graph_page").hide();
+function next(){
+	// FROM CLASSES PAGE TO WORK PAGE - 4
+	if(next_first == 0){
+		$("#main_page").hide();
+		$("#work_page").show();
+		$("#third").removeClass("active");
+		$("#third").addClass("previous visited");
+		$("#fourth").addClass("active");
+		$("#fifth").addClass("next");
+		next_first = 1;
+		previous_first = 1;
+	}
+	// WORK PAGE TO SUBMIT PAGE
+	else if(next_first == 1){
+		$("#work_page").hide();
 		$("#submit_page").show();
 		$("#fourth").removeClass("active");
 		$("#fourth").addClass("previous visited");
+		$("#fifth").removeClass("next");
 		$("#fifth").addClass("active");
+		$("#next").hide();
+		$("#previous").hide();
+		tableCreate();
+	}
+}
 
-		var seconds_left = 10;
-		var interval = setInterval(function(){
-			$("#countdown").html(--seconds_left);
-			if(seconds_left <= 0){
-				clearInterval(interval);
-				location.reload();
-			}
-		},1000);
-  	});
-});
+function previous(){
+	// FROM CLASSES PAGE TO MAJOR PAGE - 2
+	if(previous_first == 0){
+		clearArray();
+		listMajors();
+		$("#second").removeClass("previous visited");
+		$("#second").addClass("active");
+		$("#third").removeClass("active");
+		$("#third").addClass("next");
+		$("#fourth").removeClass("next");
+		$("#next").hide();
+		$("#previous").hide();
+	}
+	// FROM WORK PAGE TO CLASSES PAGE - 3
+	else if(previous_first == 1){
+		$("#work_page").hide();
+		$("#main_page").show();
+		$("#third").removeClass("previous visited");
+		$("#third").addClass("active");
+		$("#fifth").removeClass("next");
+		$("#fourth").removeClass("active")
+		$("#fourth").addClass("next");
+		previous_first = 0;
+		next_first = 0;
+	}
+}
 
 // ADD ITEM TO CLASSES TAKEN ARRAY
 function addItem(id,color){
@@ -257,16 +293,32 @@ function tableCreate(){
 				url = computerScience_links[k];
 			}
 		}
+		var day = "";
+		var teacher = "";
+		var building = "";
+		var time = "";
+		for(var k in computerScience_classes){
+			if(ready[i] == k){
+				day = computerScience_classes[k][0];
+				teacher = computerScience_classes[k][1];
+				building = computerScience_classes[k][2];
+				time = computerScience_classes[k][3];
+			}
+		}
 		data += "<ul>";
 		data += "<li>"+ready[i].split("_").join(" ");+"</li>";
-		data += '<li>Mon, Wed</li>';
-		data += '<li>9:30-10:45</li>';
-		data += '<li>Scott Fitzgerald</li>';
-		data += "<li>19203</li>";
+		data += '<li>'+day+'</li>';
+		data += '<li>'+time+'</li>';
+		data += '<li>'+teacher+'</li>';
+		data += "<li>"+building+"</li>";
 		data += '<li><a href='+url+' target="_blank" class="link_now">View Class</a></li>';
 		data += "</ul>";
 	}
 	$(".ready").append(data);
+
+	$("#calendar").on('click',function(){
+		location.href="calendar.html";
+	});
 }
 
 // RETURN CURRENT LIST OF CLASSES THAT STUDENT CAN TAKE
