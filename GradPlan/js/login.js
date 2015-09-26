@@ -163,7 +163,7 @@ $(document).ready(function(){
 	// GENERATE PDF
 	$("#complete").click(function(){
 		var doc = new jsPDF();
-		var source = $('#submit_page').html();
+		var source = $('.ready').html();
 		var specialElementHandlers = {
 	            '#bypassme': function (element, renderer) {
 	                return true;
