@@ -117,7 +117,7 @@ function create(array){
 	$(".ui_box__top").on("click",function(){
 		var rgb = $(this).css('backgroundColor');
 		var color = rgb2hex(rgb);
-		if(color == "#107fc9"){
+		if(color == "#2c5871"){
 			$(this).css("background-color","#007A3D");
 			var id = this.id;
 			taken_array[j] = id;
@@ -129,7 +129,7 @@ function create(array){
 			var id = this.id;
 			var index = taken_array.indexOf(id);
 			taken_array.splice(index,1);
-			removeItem(id,"#107FC9");
+			removeItem(id,"#2c5871");
 		}
 
 	});

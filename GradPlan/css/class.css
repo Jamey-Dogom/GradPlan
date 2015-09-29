@@ -15,7 +15,7 @@
   float:left;
   margin: 0 auto;
   position: relative;
-  background: #107FC9;
+  background: #2c5871;
   cursor: pointer;
   transform: scale(1);
   transition-property: all;
@@ -25,7 +25,7 @@
 }
 
 body .ui_box__top{
-  background:#107FC9;
+  background: #2c5871;
   padding:15px;
 }
 
@@ -38,7 +38,7 @@ body .ui_box h3 {
 body .ui_box:hover {
   -webkit-box-shadow: 0 1px 3px 2px rgba(0,0,0,.25);
   box-shadow: 0 1px 3px 2px rgba(0,0,0,.25);
-  background: #107FC9;
+  background: #2c5871;
   transform: scale(1.1);
   transition-property: transform,background;
   transition-duration: .3s;

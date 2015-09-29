@@ -55,13 +55,15 @@ ul.checkout-bar li.active:before {
 }
 ul.checkout-bar li.visited {
   background: #ECECEC;
-  color: #57aed1;
+  color: #2c5871;
   z-index: 99999;
 }
 ul.checkout-bar li.visited:before {
-  background: #57aed1;
+  background: #2c5871;
   z-index: 99999;
 }
+
+/* #57aed1 */
 ul.checkout-bar li:nth-child(1):before {
   content: "1";
 }
@@ -124,7 +126,7 @@ ul.checkout-bar {
 }
 ul.checkout-bar:before {
   background-size: 35px 35px;
-  background-color: #57aed1;
+  background-color: #2c5871;
   background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
   background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
   -webkit-box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0.2);
@@ -157,7 +159,7 @@ ul.checkout-bar li.visited {
 }
 ul.checkout-bar li.visited:after {
   background-size: 35px 35px;
-  background-color: #57aed1;
+  background-color: #2c5871;
   background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
   background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
   -webkit-box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, 0.2);
